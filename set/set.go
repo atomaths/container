@@ -6,8 +6,7 @@
 
 package set
 
-type Element struct {
-}
-
-func New() *Element {
+type Set interface {
+	Add(v interface{})
+	Contains(v interface{}) bool
 }
