@@ -15,6 +15,6 @@ func ExampleHashSet() {
 	fmt.Printf("%v\n", hs.Contains("foo"))
 	fmt.Printf("%v", hs.Contains("baz"))
 	// Output:
-	// false
+	// true
 	// false
 }
