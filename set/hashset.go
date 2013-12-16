@@ -17,7 +17,7 @@ func NewHashSet() *HashSet {
 	}
 }
 
-// Add is blah blah..
+// Add is blah blah.. 이미 값이 있으면 overwrite 됨
 func (h *HashSet) Add(v interface{}) {
 	h.data[v] = true
 }
@@ -28,9 +28,11 @@ func (h *HashSet) Contains(v interface{}) bool {
 	return ok
 }
 
-// 아래 구조가 필요가 없을래나...?
-var hs = NewHashSet()
+func (h *HashSet) Length() int64 {
+}
 
-func init() {
-	hs.data = make(map[interface{}]bool)
+func (h *HashSet) Remove(v interface{}) bool {
+}
+
+func (h *HashSet) Clear() {
 }
