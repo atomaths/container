@@ -9,7 +9,7 @@ package set
 type Set interface {
 	Add(v interface{})
 	Contains(v interface{}) bool
-	Length() int64
+	Length() uint
 	Remove(v interface{}) bool
 	Clear()
 }

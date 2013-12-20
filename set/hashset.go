@@ -28,11 +28,17 @@ func (h *HashSet) Contains(v interface{}) bool {
 	return ok
 }
 
-func (h *HashSet) Length() int64 {
+func (h *HashSet) Length() uint {
+	return uint(len(h.data))
 }
 
 func (h *HashSet) Remove(v interface{}) bool {
+	delete(h.data, v)
+	return true
 }
 
 func (h *HashSet) Clear() {
+	for k := range h.data {
+		delete(h.data, k)
+	}
 }
