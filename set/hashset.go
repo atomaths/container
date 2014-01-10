@@ -32,6 +32,18 @@ func (h *HashSet) Length() uint {
 	return uint(len(h.data))
 }
 
+// Iter returns a channel of type empty interface that you can range over.
+func (h *HashSet) Iter() <-chan interface{} {
+	ch := make(chan interface{})
+	go func() {
+		for v := range h.data {
+			ch <- v
+		}
+		close(ch)
+	}()
+	return ch
+}
+
 func (h *HashSet) Remove(v interface{}) bool {
 	delete(h.data, v)
 	return true

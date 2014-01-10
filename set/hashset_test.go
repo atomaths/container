@@ -13,6 +13,19 @@ import (
 func TestBasics(t *testing.T) {
 }
 
+func ExampleHashSet() {
+	hs := NewHashSet()
+	hs.Add("foo")
+	hs.Add("bar")
+	fmt.Printf("%v\n", hs.Contains("foo"))
+	fmt.Printf("%v\n", hs.Contains("baz"))
+	fmt.Printf("%v\n", hs.Length())
+	// Output:
+	// true
+	// false
+	// 2
+}
+
 func ExampleRemove() {
 	hs := NewHashSet()
 	hs.Add("foo")
@@ -27,15 +40,17 @@ func ExampleRemove() {
 	// 0
 }
 
-func ExampleHashSet() {
+func ExampleIter() {
 	hs := NewHashSet()
 	hs.Add("foo")
-	hs.Add("bar")
-	fmt.Printf("%v\n", hs.Contains("foo"))
-	fmt.Printf("%v\n", hs.Contains("baz"))
-	fmt.Printf("%v\n", hs.Length())
+	hs.Add(1)
+	hs.Add(3.14)
+
+	for v := range hs.Iter() {
+		fmt.Println(v)
+	}
 	// Output:
-	// true
-	// false
-	// 2
+	// foo
+	// 1
+	// 3.14
 }

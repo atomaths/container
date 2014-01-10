@@ -9,6 +9,7 @@ package set
 type Set interface {
 	Add(v interface{})
 	Contains(v interface{}) bool
+	Iter() <-chan interface{}
 	Length() uint
 	Remove(v interface{}) bool
 	Clear()
