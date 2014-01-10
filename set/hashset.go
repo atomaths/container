@@ -28,7 +28,7 @@ func (h *HashSet) Contains(v interface{}) bool {
 	return ok
 }
 
-func (h *HashSet) Length() uint {
+func (h *HashSet) Len() uint {
 	return uint(len(h.data))
 }
 

@@ -10,7 +10,7 @@ type Set interface {
 	Add(v interface{})
 	Contains(v interface{}) bool
 	Iter() <-chan interface{}
-	Length() uint
+	Len() uint
 	Remove(v interface{}) bool
 	Clear()
 }
